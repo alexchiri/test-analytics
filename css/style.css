@@ -1,0 +1,16 @@
+/* Put your CSS here */
+.ember-application {
+    margin: 20px;
+}
+
+.active {
+	font-weight: bold;
+}
+
+table.capabilities-table th {
+	width: 100px;
+}
+
+table.capabilities-table td.component {
+	font-weight: bold;
+}
