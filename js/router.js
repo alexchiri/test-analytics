@@ -29,6 +29,12 @@ App.ProjectRoute = Ember.Route.extend({
     }
 });
 
+App.ProjectsIndexRoute = Ember.Route.extend({
+    model:function(params) {
+        return this.modelFor('projects');
+    }
+});
+
 App.ProjectIndexRoute = Ember.Route.extend({
     model:function(params) {
         return this.modelFor('project');
