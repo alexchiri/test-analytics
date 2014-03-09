@@ -10,7 +10,7 @@ App.ProjectsIndexController = Ember.ArrayController.extend({
 
             return n.get("completion") >= now;
         });
-    }.property('arrangedContent.@each.completion'),
+    }.property('model.@each'),
 
     completedProjects: function () {
         var sortedProjects = this.get("arrangedContent");
@@ -20,11 +20,37 @@ App.ProjectsIndexController = Ember.ArrayController.extend({
 
             return n.get("completion") < now;
         });
-    }.property('arrangedContent.@each.completion'),
+    }.property('model.@each'),
 
     actions: {
         createProject: function() {
+            // get the data from the template
+            var projectName = this.get("newProjectName");
+            var projectLead = this.get("newProjectLead");
+            var projectDate = this.get("newProjectCompletion");
+            console.log("projectDate: " + projectDate);
+            var projectDescription = this.get("newProjectDescription");
 
+            // create new project record
+            var project = this.store.createRecord('project', {
+                name: projectName,
+                description: '',
+                lead: projectLead,
+                completion: new Date(projectDate),
+                description: projectDescription
+            });
+
+            // save new project
+            project.save();
+
+            // clear inputs
+            this.set('newProjectName', '');
+            this.set('newProjectLead', '');
+            this.set('newProjectCompletion', '');
+            this.set('newProjectDescription', '');
+
+            // push attribute to the project array of attributs
+            this.get("model").pushObject(project);
         }
     }
 
