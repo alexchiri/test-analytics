@@ -10,8 +10,7 @@ App.ProjectAttributesController = Ember.ArrayController.extend({
 			var attribute = this.store.createRecord('attribute', {
 				name: attributeName,
 				description: '',
-				project: project,
-				capabilities: []
+				project: project
 			});
 	
 			this.set('newAttributeName', '');

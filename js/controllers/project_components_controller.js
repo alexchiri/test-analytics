@@ -10,8 +10,7 @@ App.ProjectComponentsController = Ember.ArrayController.extend({
 			var component = this.store.createRecord('component', {
 				name: componentName,
 				description: '',
-				project: project,
-				capabilities: []
+				project: project
 			});
 	
 			this.set('newComponentName', '');
