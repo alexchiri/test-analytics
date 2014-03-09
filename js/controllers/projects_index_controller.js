@@ -3,8 +3,6 @@ App.ProjectsIndexController = Ember.ArrayController.extend({
     sortAscending: true,
 
     activeProjects: function () {
-        console.log("Entered activeProjects");
-
         var sortedProjects = this.get("arrangedContent");
 
         return jQuery.grep(sortedProjects, function (n, i) {
