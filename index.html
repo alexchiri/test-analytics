@@ -138,13 +138,20 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="project/index">
-    {{description}}
+    {{description}} <br/><br/>
+    <strong>Completion date:</strong> {{format-date completion}} <br/>
+    <strong>Lead:</strong> {{lead}} <br/>
 </script>
 
 <script type="text/x-handlebars" data-template-name="project/attributes">
-    {{input type="text" id="new-attribute-name" placeholder="Add a new attribute..."
-    value=newAttributeName}}
-    <button
+
+    <div class="form-group">
+        <label class="sr-only" for="new-attribute-name">Project description: </label>
+        <div class="col-sm-8">{{input type="text" id="new-attribute-name" placeholder="Enter attribute name..."
+            value=newAttributeName class="form-control"}}</div>
+    </div>
+
+    <button class="btn btn-default"
     {{ action "addAttribute"}}>Add</button>
 
     <br/><br/>
@@ -159,7 +166,7 @@
 <script type="text/x-handlebars" data-template-name="project/components">
     {{input type="text" id="new-component-name" placeholder="Add a new component..."
     value=newComponentName}}
-    <button
+    <button class="btn btn-default"
     {{ action "addComponent"}} > Add </button>
 
     <br/><br/>
