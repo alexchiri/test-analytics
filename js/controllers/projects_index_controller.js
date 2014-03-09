@@ -22,6 +22,12 @@ App.ProjectsIndexController = Ember.ArrayController.extend({
 
             return n.get("completion") < now;
         });
-    }.property('arrangedContent.@each.completion')
+    }.property('arrangedContent.@each.completion'),
+
+    actions: {
+        createProject: function() {
+
+        }
+    }
 
 });

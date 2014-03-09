@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+
 <script type="text/x-handlebars">
     <div class="navbar navbar-default">
         <a class="navbar-brand" href="#">Demo Test Analytics</a>
@@ -49,6 +50,15 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="projects/index">
+
+    {{input type="text" id="new-project-name" placeholder="Project name..."
+    value=newProjectName}}
+    {{input type="text" id="new-project-lead" placeholder="Project lead..."
+    value=newProjectLead}}
+
+    <button
+    {{ action "createProject"}}>Create project</button>
+
     <h2>Active projects:</h2>
     {{render "projects_table" activeProjects}}
 
@@ -179,11 +189,11 @@
 <script src="js/libs/ember-data-1.0.0-beta.7.js"></script>
 <script src="js/app.js"></script>
 <script src="js/router.js"></script>
+<script src="js/helpers.js"></script>
 <script src="js/controllers/project_attributes_controller.js"></script>
 <script src="js/controllers/project_components_controller.js"></script>
 <script src="js/controllers/project_capabilities_controller.js"></script>
 <script src="js/controllers/projects_index_controller.js"></script>
-<script src="js/helper.js"></script>
 <!--script src="js/controllers/capabilities_show_capabilities_controller.js"></script-->
 <!-- to activate the test runner, add the "?test" query string parameter -->
 <script src="tests/runner.js"></script>
