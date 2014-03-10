@@ -1,0 +1,12 @@
+<div class="navbar navbar-default">
+    {{#link-to 'project' this class="navbar-brand"}}
+        {{name}}
+    {{/link-to}}
+    <ul class="nav navbar-nav">
+        <li>{{#link-to 'project.attributes' this }}Attributes{{/link-to}}</li>
+        <li>{{#link-to 'project.components' this }}Components{{/link-to}}</li>
+        <li>{{#link-to 'capabilities' this }}Capabilities{{/link-to}}</li>
+    </ul>
+</div>
+
+{{outlet}}

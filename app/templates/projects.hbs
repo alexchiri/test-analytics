@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-3">
+            <table class='table'>
+                <thead>
+                <tr>
+                    <th>Recent Projects</th>
+                </tr>
+                </thead>
+                {{#each model}}
+                    <tr>
+                        <td>
+                            {{#link-to 'project' this}}
+                                {{name}}
+                                <small class='muted'>by {{lead}}</small>
+                            {{/link-to}}
+                        </td>
+                    </tr>
+                {{/each}}
+            </table>
+        </div>
+        <div class="col-md-9 col-sm-9">
+            {{outlet}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<table class="capabilities-table">
+    <thead>
+    <th></th>
+    {{#each attribute in project.attributes}}
+        <th>{{attribute.name}}</th>
+    {{/each}}
+    </thead>
+    {{#each component in project.components}}
+        <tr>
+            <td class="component">{{component.name}}</td>
+            {{#each attribute in project.attributes}}
+                <td>{{#link-to 'capabilities.showCapabilities' project }}2{{/link-to}}</td>
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
+
+{{outlet}}

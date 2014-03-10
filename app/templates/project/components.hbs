@@ -1,0 +1,12 @@
+{{input type="text" id="new-component-name" placeholder="Add a new component..."
+value=newComponentName}}
+<button class="btn btn-default"
+    {{ action "addComponent"}} > Add </button>
+
+<br/><br/>
+
+<ul>
+    {{#each model}}
+        <li>{{name}}</li>
+    {{/each}}
+</ul>
