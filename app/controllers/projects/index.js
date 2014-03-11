@@ -5,7 +5,7 @@ var ProjectsIndexController = Ember.ArrayController.extend({
     activeProjects: function () {
         var sortedProjects = this.get("arrangedContent");
 
-        return $().grep(sortedProjects, function (n, i) {
+        return jQuery.grep(sortedProjects, function (n, i) {
             var now = new Date();
 
             return n.get("completion") >= now;
@@ -15,7 +15,7 @@ var ProjectsIndexController = Ember.ArrayController.extend({
     completedProjects: function () {
         var sortedProjects = this.get("arrangedContent");
 
-        return $().grep(sortedProjects, function (n, i) {
+        return jQuery.grep(sortedProjects, function (n, i) {
             var now = new Date();
 
             return n.get("completion") < now;
